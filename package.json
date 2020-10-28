@@ -36,7 +36,7 @@
     "lodash.clonedeep": "^4.5.0",
     "lodash.isequal": "^4.5.0",
     "lodash.merge": "^4.5.0",
-    "parchment": "https://github.com/Unacademy/parchment.git",
+    "parchment": "Unacademy/parchment#build",
     "quill-delta": "4.2.2"
   },
   "devDependencies": {
@@ -153,14 +153,8 @@
     "build:webpack": "webpack --config _develop/webpack.config.js; rm dist/quill.core dist/quill.bubble dist/quill.snow",
     "build:release": "./_develop/scripts/release.sh",
     "develop": "npm run start",
-    "lint": "eslint blots core formats modules themes ui test",
-    "start": "npm run build:webpack; bundle exec foreman start -f _develop/procfile",
-    "test": "npm run test:unit",
-    "test:all": "npm run test:unit; npm run test:functional",
-    "test:functional": "./_develop/scripts/puppeteer.sh",
-    "test:unit": "npm run build; karma start _develop/karma.config.js",
-    "test:coverage": "webpack --env.coverage --config _develop/webpack.config.js; karma start _develop/karma.config.js --reporters coverage",
-    "travis": "npm run lint && karma start _develop/karma.config.js --reporters dots,saucelabs"
+    "lint": "eslint blots core formats modules themes ui",
+    "start": "npm run build:webpack; bundle exec foreman start -f _develop/procfile"
   },
   "keywords": [
     "editor",
